@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # add-app
+     'phonenumber_field',
+         'crispy_forms',
+
     # New Apps
     'accounts', 
 
@@ -103,10 +107,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+#email backend 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_PORT =  587 
+EMAIL_HOST = 'smtp.gmail.com'
 
-# Internationalization
-# https://docs.djangoproject.com/en/2.1/topics/i18n/
-
+EMAIL_HOST_USER = 'mohamed.khaled33388@gmail.com'
+EMAIL_HOST_PASSWORD = 'mohamed19981998'
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -126,3 +133,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     STATIC_DIRS,
 ]
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+AUTH_USER_MODEL  = 'accounts.User'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'

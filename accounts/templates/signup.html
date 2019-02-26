@@ -1,0 +1,13 @@
+{% extends "base_signup/base.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block signup %}
+<title>{% block title %}Sign up{% endblock title %} </title>
+<body  class = 'body-back' style="background-image: url('/static/images_reg/bg-01.jpg');">
+     <form method="POST">
+         {% csrf_token %}
+         {{form|crispy}}
+         <input type="submit">
+     </form>
+</body>
+{% endblock signup %}
